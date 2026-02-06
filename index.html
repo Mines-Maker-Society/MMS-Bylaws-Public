@@ -4,14 +4,18 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title> MMS Bylaws </title>
+    <title>MMS Policies</title>
     <style>
-      *{ border:0; margin:0; }
-       html, body { height:100%; }
+      html, body { margin:0; height:100%; }
+      iframe{ position:fixed; inset:0; width:100%; height:100%; border:0; }
     </style>
   </head>
   <body>
-    <div style="height: 100vh;">
-      <iframe src="./MMS_Bylaws.pdf" width="100%" height="100%"></iframe>
+    <iframe id="v" title="View PDF"></iframe>
+    <script>
+      const pdf = new URL("./MMS_Bylaws.pdf", location.href).href;
+      document.getElementById("v").src = "https://mozilla.github.io/pdf.js/web/viewer.html?file=" + encodeURIComponent(pdf);
+    </script>
+    <noscript><a href="./"MMS_Bylaws.pdf">Open PDF</a></noscript>
   </body>
 </html>
